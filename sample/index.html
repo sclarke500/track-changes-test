@@ -31,6 +31,7 @@
     <body>
         <button id="get-data">Get editor data</button>
         <button id="insert-html">Insert HTML</button>
+        <button id="remove-html">Remove HTML</button>
 
         <div id="container">
             <div id="editor"> </div>
@@ -156,6 +157,9 @@
                 // After the editor is initialized, add an action
                 // to be performed after a button is clicked.
                 const trackChanges = editor.plugins.get( 'TrackChanges' );
+                const trackChangesEditing = editor.plugins.get( 'TrackChangesEditing' );
+                trackChangesEditing.enableCommand('insertHtml');
+                trackChangesEditing.enableCommand('removeHtml');
 
                 // Get the data on demand.
                 document.querySelector( '#get-data' ).addEventListener( 'click', () => {
@@ -170,6 +174,9 @@
 
                 document.querySelector('#insert-html').addEventListener('click', () => {
                   editor.execute('insertHtml');
+                });
+                document.querySelector('#remove-html').addEventListener('click', () => {
+                  editor.execute('removeHtml');
                 });
 
             } )

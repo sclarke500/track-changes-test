@@ -5,10 +5,11 @@ import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 import TrackChanges from '@ckeditor/ckeditor5-track-changes/src/trackchanges';
 
 import InsertHtmlPlugin from './insert-html/inert-html.plugin';
+import RemoveHtmlPlugin from './remove-html/remove-html.plugin';
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
-ClassicEditor.builtinPlugins = [ Essentials, Paragraph, TrackChanges, InsertHtmlPlugin ];
+ClassicEditor.builtinPlugins = [ Essentials, Paragraph, TrackChanges, InsertHtmlPlugin, RemoveHtmlPlugin ];
 
 // The editor configuration.
 ClassicEditor.defaultConfig = {
